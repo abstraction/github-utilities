@@ -34,7 +34,7 @@ if __name__ == '__main__':
             repo_description = repos['description']
             try:
                 print(f'♻️ Cloning {repo}...')
-                Repo.clone_from(repo, f'/Volumes/WD 1TB/repository/{repo_name}')
+                Repo.clone_from(repo, f'{CSV_PATH}/repository/{repo_name}')
                 with open(f'{CSV_PATH}/success_repos.csv', mode='a') as repo_csv:
                     repo_writer = csv.writer(repo_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                     repo_writer.writerow([repo_name, repo_description])
